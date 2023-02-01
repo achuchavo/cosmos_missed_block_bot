@@ -1,9 +1,10 @@
 import requests
 import time
 TOKEN = "5759706544:AAH-ILIafiXqlbENqF-z6for3bMlNxPJ8Qs"
-chat_id_mv = "-881802204"
-chat_id_mv_grp = "-883554103"
-chat_id_beehive_missed_block = "-588320480"
+# chat_id_mv = "-881802204"
+# chat_id_mv_grp = "-883554103"
+# chat_id_beehive_missed_block = "-588320480"
+the_chat_id = "-588320480"
 the_block = 0
 uptime_limit =  95
 block_arr = []
@@ -86,7 +87,7 @@ def get_uptime(a_arr):
 def send_alarm(auptime):
     global coin_name
     message = coin_name+" uptime : " +str(auptime)
-    url = f"https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={chat_id_mv}&text={message}"
+    url = f"https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={the_chat_id}&text={message}"
     print(requests.get(url).json()) 
     
         

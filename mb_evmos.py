@@ -1,19 +1,22 @@
 import requests
 import time
 TOKEN = "5759706544:AAH-ILIafiXqlbENqF-z6for3bMlNxPJ8Qs"
-chat_id_mv = "-881802204"
-chat_id_mv_grp = "-883554103"
-chat_id_beehive_missed_block = "-588320480"
+# chat_id_mv = "-881802204"
+# chat_id_mv_grp = "-883554103"
+# chat_id_beehive_missed_block = "-588320480"
+the_chat_id = "-588320480"
 the_block = 0
 uptime_limit =  95
 block_arr = []
+coin_name= 'EVMOS'
+rpc_endpoint = 'https://tendermint.bd.evmos.org:26657'
 #below gets chat id 
 # url = f"https://api.telegram.org/bot{TOKEN}/getUpdates"
 # print(requests.get(url).json())
 
 def get_latest_block():
     #get latest block
-    url_status = f"https://tendermint.bd.evmos.org:26657/status"
+    url_status = f""+rpc_endpoint+"/status"
     json_status = requests.get(url_status)
     recent_block = json_status.json()['result']['sync_info']['latest_block_height']
     print('latest : '+recent_block)
@@ -29,7 +32,7 @@ def check_missed_block():
     try:
         if the_block == 0 :
             the_block = get_latest_block()    
-        url = f"https://tendermint.bd.evmos.org:26657/commit?height={the_block}"
+        url = f""+rpc_endpoint+"/commit?height="+str(the_block)
         ajson = requests.get(url)
         _validator = 'C52CF80E872A4F2CC3A114A733D301A421C857F0'
         ablock = get_latest_block()  
@@ -48,7 +51,6 @@ def check_missed_block():
             #check for uptime condition and send uptime alarm
             if len(block_arr) >= 100:
                 print('--------------')
-                #print('Nothing found!')
                 print('latest  :' + str(ablock) + ' process : ' + str(the_block))
                 uptime = get_uptime(block_arr)
                 print('UPTIME  :' + str(uptime))
@@ -83,8 +85,9 @@ def get_uptime(a_arr):
     return cnt
 
 def send_alarm(auptime):
-    message = "EVMOS uptime : " +str(auptime)
-    url = f"https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={chat_id_mv}&text={message}"
+    global coin_name
+    message = coin_name+" uptime : " +str(auptime)
+    url = f"https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={the_chat_id}&text={message}"
     print(requests.get(url).json()) 
     
         
@@ -93,8 +96,3 @@ if __name__ == "__main__":
     while True:
         check_missed_block()
         time.sleep(0.2)
-
-# 10350930
-# message = "Hello Boss!"
-# url = f"https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={chat_id_mv}&text={message}"
-# print(requests.get(url).json()) # this sends the message
