@@ -1,15 +1,14 @@
 import requests
 import time
-TOKEN = "5759706544:AAH-ILIafiXqlbENqF-z6for3bMlNxPJ8Qs"
-# chat_id_mv = "-881802204"
-# chat_id_mv_grp = "-883554103"
-# chat_id_beehive_missed_block = "-588320480"
-the_chat_id = "-588320480"
+import config
+TOKEN =  config.TOKEN
+the_chat_id = config.the_chat_id
 the_block = 0
-uptime_limit =  95
+uptime_limit =  config.uptime_limit
+uptime_limit_fixed =  config.uptime_limit_fixed
 block_arr = []
 coin_name= 'OSMOSIS'
-rpc_endpoint = 'https://osmosis-rpc.polkachu.com'
+rpc_endpoint = config.rpc_osmo
 #below gets chat id 
 # url = f"https://api.telegram.org/bot{TOKEN}/getUpdates"
 # print(requests.get(url).json())
@@ -34,7 +33,7 @@ def check_missed_block():
             the_block = get_latest_block()    
         url = f""+rpc_endpoint+"/commit?height="+str(the_block)
         ajson = requests.get(url)
-        _validator = '3749086B6D85BDE3DACFBE4485E3DF95E709B6DB'
+        _validator = config.val_osmo
         ablock = get_latest_block()  
         if  the_block < ablock:
             for commits in ajson.json()['result']['signed_header']['commit']['signatures']:
@@ -57,8 +56,8 @@ def check_missed_block():
                 if uptime < uptime_limit:
                     send_alarm(uptime)  
                     uptime_limit = uptime_limit-5 
-                elif uptime > 95 :
-                    uptime_limit  = 95
+                elif uptime > uptime_limit_fixed :
+                    uptime_limit  = uptime_limit_fixed
                 block_arr.pop()               
                 print('--------------')        
                 
