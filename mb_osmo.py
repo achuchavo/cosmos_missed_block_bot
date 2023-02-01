@@ -9,7 +9,7 @@ uptime_limit_fixed =  config.uptime_limit_fixed
 block_arr = []
 coin_name= 'OSMOSIS'
 rpc_endpoint = config.rpc_osmo
-#below gets chat id 
+#below gets chat id s
 # url = f"https://api.telegram.org/bot{TOKEN}/getUpdates"
 # print(requests.get(url).json())
 

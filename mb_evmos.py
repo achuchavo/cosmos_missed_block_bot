@@ -23,7 +23,7 @@ def get_latest_block():
     return process_block
 
 
-#missed blockss
+#missed blocks
 def check_missed_block():
     global the_block
     global uptime_limit
