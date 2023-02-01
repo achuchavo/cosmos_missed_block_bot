@@ -2,7 +2,7 @@
 TOKEN = "5759706544:AAH-ILIafiXqlbENqF-z6for3bMlNxPJ8Qs"
 # chat_id_mv = "-881802204"
 # chat_id_mv_grp = "-883554103"
-# chat_id_beehive_missed_block = "-588320480"
+# chat_id_beehive_missed_block = "-588320480"ss
 the_chat_id = "-881802204"
 rpc_osmo = 'https://osmosis-rpc.polkachu.com'
 rpc_evmos = 'https://tendermint.bd.evmos.org:26657'
