@@ -14,7 +14,7 @@ rpc_endpoint = config.rpc_evmos
 # print(requests.get(url).json())
 
 def get_latest_block():
-    #get latest block
+    #get latest blocks
     url_status = f""+rpc_endpoint+"/status"
     json_status = requests.get(url_status)
     recent_block = json_status.json()['result']['sync_info']['latest_block_height']
