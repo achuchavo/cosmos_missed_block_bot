@@ -79,7 +79,7 @@ def get_uptime(a_arr):
     for x,y in a_arr:
         if y == '1':
             cnt = cnt +1
-    print('Missed Blocks : ' +str(cnt))
+    print(coin_name +' Missed Blocks : ' +str(cnt))
     cnt = 100-cnt
     return cnt
 
