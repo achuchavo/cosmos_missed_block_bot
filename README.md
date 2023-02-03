@@ -26,7 +26,7 @@ Run Using the following command :
 #### EXAMPLE (EVMOS)
 
 ```
-   python3 mb_cosmos.py EVMOS https://evmos-rpc.polkachu.com 0.2 90
+   python3 mb_cosmos.py EVMOS https://evmos-rpc.polkachu.com 0.2 90 C52CF80E872A4F2CC3A114A733D301A421C857F0
 ```
 
 #### TO GET VALIDATOR ADDRESS RUN
