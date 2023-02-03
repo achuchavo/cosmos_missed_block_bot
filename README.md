@@ -9,7 +9,7 @@ Telegram Alarm Bot for Cosmos Missed Blocks
 Run Using the following command :
 
 ```
-   python3 mb_cosmos.py [coin_name] [rpc_endpoint] [sleep_time] [uptime_count_threshhold]
+   python3 mb_cosmos.py [coin_name] [rpc_endpoint] [sleep_time] [uptime_count_threshhold] [validator_addr]
 ```
 
 #### Parameters 
@@ -20,6 +20,7 @@ Run Using the following command :
 | 2    | [rpc_endpoint] | Public RPC Endpoint |
 | 3    | [sleep_time] | Sleep time timer interval |
 | 4    | [uptime_count_threshhold]| Level at which when dropped will signal alarm bot |
+| 4    | [validator_addr]| Validator Address |
 
 
 #### EXAMPLE (EVMOS)
@@ -27,3 +28,11 @@ Run Using the following command :
 ```
    python3 mb_cosmos.py EVMOS https://evmos-rpc.polkachu.com 0.2 90
 ```
+
+#### TO GET VALIDATOR ADDRESS RUN
+
+```
+   curl -X GET "http://localhost:26657/status" | jq
+```
+
+

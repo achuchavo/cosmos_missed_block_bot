@@ -12,6 +12,7 @@ rpc_endpoint = sys.argv[2]
 sleep_time = float(sys.argv[3])
 uptime_limit =  int(sys.argv[4])
 uptime_limit_fixed =  int(sys.argv[4])
+the_validator = sys.argv[5]
 #below gets chat id 
 # url = f"https://api.telegram.org/bot{TOKEN}/getUpdates"
 # print(requests.get(url).json())
@@ -36,7 +37,7 @@ def check_missed_block():
             the_block = get_latest_block()    
         url = f""+rpc_endpoint+"/commit?height="+str(the_block)
         ajson = requests.get(url)
-        _validator = config.val_evmos
+        _validator = the_validator
         ablock = get_latest_block()  
         if  the_block < ablock:
             for commits in ajson.json()['result']['signed_header']['commit']['signatures']:
