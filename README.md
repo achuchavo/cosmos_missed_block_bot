@@ -1,10 +1,10 @@
-# cosmos_missed_block_bot
+# COSMOS MISSED BLOCK TELEGRAM BOT
 Telegram Alarm Bot for Cosmos Missed Blocks 
 
 - After cloning rename config_dummy.py to config_dummy.py
 - In config.py paste your Telegram Bot TOKEN
 
-# Run all from one Script [mb_cosmos.py]
+# Run using just one Script [mb_cosmos.py]
 
 Run Using the following command :
 
