@@ -6,12 +6,12 @@ import sys
 TOKEN =  config.TOKEN
 the_chat_id = config.the_chat_id
 the_block = 0
-uptime_limit =  config.uptime_limit
-uptime_limit_fixed =  config.uptime_limit_fixed
 block_arr = []
-coin_name= 'EVMOS'
-# coin_name =  sys.argv[1]
-rpc_endpoint = config.rpc_evmos
+coin_name =  sys.argv[1]
+rpc_endpoint = sys.argv[2]
+sleep_time = float(sys.argv[3])
+uptime_limit =  int(sys.argv[4])
+uptime_limit_fixed =  int(sys.argv[4])
 #below gets chat id 
 # url = f"https://api.telegram.org/bot{TOKEN}/getUpdates"
 # print(requests.get(url).json())
@@ -74,7 +74,8 @@ def check_missed_block():
             print(len(block_arr))
     except Exception as e:
         print('Exception : ' +  str(e))
-        block_arr.pop() 
+        if len(block_arr) >= 100:
+            block_arr.pop() 
     return
 
 def get_uptime(a_arr):
@@ -97,4 +98,4 @@ if __name__ == "__main__":
     # check_missed_block()
     while True:
         check_missed_block()
-        time.sleep(0.2)
+        time.sleep(sleep_time)
