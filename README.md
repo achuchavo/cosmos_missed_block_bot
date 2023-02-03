@@ -7,4 +7,10 @@ Telegram Alarm Bot for Cosmos Missed Blocks
 # Run all from one Script [mb_cosmos.py]
 
 Run Using the following command
-python3 mb_cosmos.py [coin_name] [rpc_endpoint] [sleep_time] [uptime_count_threshhold]
+
+```
+{
+   python3 mb_cosmos.py [coin_name] [rpc_endpoint] [sleep_time] [uptime_count_threshhold]
+}
+```
+
