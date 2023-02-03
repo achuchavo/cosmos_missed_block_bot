@@ -6,11 +6,18 @@ Telegram Alarm Bot for Cosmos Missed Blocks
 
 # Run all from one Script [mb_cosmos.py]
 
-Run Using the following command
+Run Using the following command :
 
 ```
-{
    python3 mb_cosmos.py [coin_name] [rpc_endpoint] [sleep_time] [uptime_count_threshhold]
-}
 ```
+
+#### Parameters 
+
+| #    | Type                               | Description                                                  |
+| ---- | ---------------------------------- | ------------------------------------------------------------ |
+| 1    | {[`coin_name`](`string`)}                  | coin name e.g EVMOS                               |
+| 2    | {[`rpc_endpoint`](`string`)} | Public RPC Endpoint |
+| 3    | {[`sleep_time`](`float`)} | Sleep time timer interval |
+| 4    | {[`uptime_count_threshhold`](`int`)} | Level at which when dropped will signal alarm bot |
 
