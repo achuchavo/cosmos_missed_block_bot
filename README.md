@@ -16,8 +16,14 @@ Run Using the following command :
 
 | #    | Type                               | Description                                                  |
 | ---- | ---------------------------------- | ------------------------------------------------------------ |
-| 1    | {[`coin_name`](`string`)}                  | coin name e.g EVMOS                               |
-| 2    | {[`rpc_endpoint`](`string`)} | Public RPC Endpoint |
-| 3    | {[`sleep_time`](`float`)} | Sleep time timer interval |
-| 4    | {[`uptime_count_threshhold`](`int`)} | Level at which when dropped will signal alarm bot |
+| 1    | [coin_name]                 | coin name e.g EVMOS                               |
+| 2    | [rpc_endpoint] | Public RPC Endpoint |
+| 3    | [sleep_time] | Sleep time timer interval |
+| 4    | [uptime_count_threshhold]| Level at which when dropped will signal alarm bot |
 
+
+#### EXAMPLE (EVMOS)
+
+```
+   python3 mb_cosmos.py EVMOS https://evmos-rpc.polkachu.com 0.2 90
+```
