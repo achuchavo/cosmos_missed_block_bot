@@ -1,0 +1,14 @@
+{
+    "vals": {  
+        "RIZON" : "B3036D22E119AD55E1230693F0E688E93F96860A",
+        "EVMOS" : "C52CF80E872A4F2CC3A114A733D301A421C857F0",
+        "MEDIBLOC" : "DC842D13218E7C50B10C675AD27BAFD9CE7CFBD6",
+        "OSMOSIS" : "3749086B6D85BDE3DACFBE4485E3DF95E709B6DB"
+    },
+    "api": {
+        "RIZON" : "http://seed-1.mainnet.rizon.world:26657",
+        "EVMOS" : "https://evmos-rpc.polkachu.com",
+        "MEDIBLOC" : "https://rpc.gopanacea.org",
+        "OSMOSIS" : "https://rpc-osmosis.blockapsis.com"
+    }
+}
