@@ -62,7 +62,7 @@ def get_latest_block(an_endpoint, acoin_name, aval_name):
     process_block = int(recent_block)-1
     return process_block
 
-# missed blocks
+# missed blocks functions
 
 
 def check_missed_block(an_endpoint, acoin_name, aval_name):
